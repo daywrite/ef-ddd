@@ -8,20 +8,61 @@ using OBear.Datas.Ef;
 
 namespace Applications.Datas.Ef.Mappings.Commons
 {
-    public class AreaConfiguration : EntityConfigurationBase<Area, Guid>
+    public class AreaConfiguration : AggregateMapBase<Area>
     {
-        public AreaConfiguration()
+        /// <summary>
+        /// 映射表
+        /// </summary>
+        protected override void MapTable()
         {
-            ToTable("Area");
-            HasKey(c => c.Id);
+            ToTable("Areas", "Commons");
+        }
 
-            Property(c => c.Code).IsRequired().HasColumnType("Varchar").HasMaxLength(50);
-            Property(c => c.Text).IsRequired().HasColumnType("Varchar").HasMaxLength(50);
-            Property(c => c.PinYin).IsRequired().HasColumnType("Varchar").HasMaxLength(100);
-            Property(c => c.FullPinYin).IsRequired().HasColumnType("Varchar").HasMaxLength(500);
+        /// <summary>
+        /// 映射属性
+        /// </summary>
+        protected override void MapProperties()
+        {
+            //映射基类属性
+            base.MapProperties();
+            //地区编号
+            Property(t => t.Id)
+                .HasColumnName("AreaId");
+            //父编号
+            Property(t => t.ParentId)
+                .HasColumnName("ParentId");
+            //编码
+            Property(t => t.Code)
+                .HasColumnName("Code");
+            //地区名称
+            Property(t => t.Text)
+                .HasColumnName("Text");
+            //路径
+            Property(t => t.Path)
+                .HasColumnName("Path");
+            //级数
+            Property(t => t.Level)
+                .HasColumnName("Level");
+            //排序号
+            Property(t => t.SortId)
+                .HasColumnName("SortId");
+            //拼音简码
+            Property(t => t.PinYin)
+                .HasColumnName("PinYin");
+            //全拼
+            Property(t => t.FullPinYin)
+                .HasColumnName("FullPinYin");
+            //启用
+            Property(t => t.Enabled)
+                .HasColumnName("Enabled");          
+        }
 
-            Property(c => c.IsDeleted).IsRequired().HasColumnType("bit");
-            Property(c => c.CreatedTime).IsRequired().HasColumnType("DateTime");
+        /// <summary>
+        /// 映射导航属性
+        /// </summary>
+        protected override void MapAssociations()
+        {
         }
     }
 }
+

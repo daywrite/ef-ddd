@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUnitOfWork.cs" />
+    <Compile Include="Mappings\AggregateMapBase.cs" />
     <Compile Include="Mappings\Commons\AreaConfiguration.cs" />
     <Compile Include="Migrations\CreateDatabaseIfNotExistsWithSeed.cs" />
     <Compile Include="Migrations\DatabaseInitializer.cs" />

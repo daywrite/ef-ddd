@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregateMapBase.cs" />
     <Compile Include="EfUnitOfWork.cs" />
     <Compile Include="EntityConfigurationBase.cs" />
     <Compile Include="IEntityMapper.cs" />
