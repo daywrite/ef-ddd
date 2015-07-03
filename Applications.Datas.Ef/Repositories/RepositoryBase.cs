@@ -12,7 +12,7 @@ namespace Applications.Datas.Ef.Repositories
     /// 基仓储
     /// </summary>
     /// <typeparam name="TEntity">实体类型</typeparam>
-    public abstract class RepositoryBase<TEntity> : Repository<TEntity, int> where TEntity : EntityBase<int>
+    public abstract class RepositoryBase<TEntity> : Repository<TEntity, Guid> where TEntity : EntityBase<Guid>
     {
         /// <summary>
         /// 初始化仓储

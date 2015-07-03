@@ -8,7 +8,7 @@ using OBear.Datas.Ef;
 
 namespace Applications.Datas.Ef.Mappings.Commons
 {
-    public class AreaConfiguration : EntityConfigurationBase<Area, int>
+    public class AreaConfiguration : EntityConfigurationBase<Area, Guid>
     {
         public AreaConfiguration()
         {

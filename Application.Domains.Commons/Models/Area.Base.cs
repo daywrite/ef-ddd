@@ -12,8 +12,28 @@ namespace Applications.Domains.Commons.Models
     /// <summary>
     /// 地区
     /// </summary>
-    public partial class Area : EntityBase<int>
+    public partial class Area : TreeEntityBase<Area>
     {
+        /// <summary>
+        /// 初始化地区
+        /// </summary>
+        public Area()
+            : this(Guid.Empty, "", 0)
+        {
+
+        }
+
+        /// <summary>
+        /// 初始化地区
+        /// </summary>
+        /// <param name="id">地区标识</param>
+        /// <param name="path">路径</param>
+        /// <param name="level">级数</param>
+        public Area(Guid id, string path, int level)
+            : base(id, path, level)
+        {
+        }
+
         /// <summary>
         /// 编码
         /// </summary>

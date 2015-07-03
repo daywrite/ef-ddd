@@ -246,6 +246,10 @@
       <Project>{5d64fa71-9f5b-4a19-8f09-589869a44be6}</Project>
       <Name>02-Applications.Datas.Ef</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Applications.Domains.Core\01-Applications.Domains.Core.csproj">
+      <Project>{a619ba60-0a08-45fa-9e30-e0636c6e554a}</Project>
+      <Name>01-Applications.Domains.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Applications.Services\Applications.Services.csproj">
       <Project>{718424dc-29d6-4863-b9b4-cf154cb288f9}</Project>
       <Name>Applications.Services</Name>

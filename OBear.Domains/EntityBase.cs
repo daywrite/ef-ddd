@@ -11,12 +11,14 @@ namespace OBear.Domains
     /// 可持久化到数据库的数据模型基类
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
-    public abstract class EntityBase<TKey>
+    public abstract class EntityBase<TKey> : IEntity<TKey>
     {
-        protected EntityBase()
+        protected EntityBase(TKey id)
         {
             IsDeleted = false;
             CreatedTime = DateTime.Now;
+
+            Id = id;
         }
 
         #region 属性
@@ -24,8 +26,8 @@ namespace OBear.Domains
         /// <summary>
         /// 获取或设置 实体唯一标识，主键
         /// </summary>
-        [Key]
-        public TKey Id { get; set; }
+        [Required]
+        public TKey Id { get; private set; }
 
         /// <summary>
         /// 获取或设置 是否删除，逻辑上的删除，非物品删除

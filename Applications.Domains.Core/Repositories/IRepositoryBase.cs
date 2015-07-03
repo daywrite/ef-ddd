@@ -12,7 +12,7 @@ namespace Applications.Domains
     /// 仓储
     /// </summary>
     /// <typeparam name="TEntity">实体类型</typeparam>
-    public interface IRepositoryBase<TEntity> : IRepository<TEntity, int> where TEntity : EntityBase<int>
+    public interface IRepositoryBase<TEntity> : IRepository<TEntity, Guid> where TEntity : EntityBase<Guid>
     {
     }
 }
