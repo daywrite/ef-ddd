@@ -54,8 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BatchServiceBase.cs" />
     <Compile Include="Configs\IocConfig.cs" />
     <Compile Include="Contracts\Commons\IAreaService.cs" />
+    <Compile Include="Dtos\Commons\AreaDto.cs" />
     <Compile Include="Impl\Commons\AreaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBase.cs" />
@@ -76,6 +78,10 @@
     <ProjectReference Include="..\Applications.Domains.Core\01-Applications.Domains.Core.csproj">
       <Project>{a619ba60-0a08-45fa-9e30-e0636c6e554a}</Project>
       <Name>01-Applications.Domains.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OBear.ApplicationServices\OBear.ApplicationServices.csproj">
+      <Project>{b8fcd256-9a3a-44b0-bf75-5eafec4bc8e5}</Project>
+      <Name>OBear.ApplicationServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\OBear.Core\OBear.Core.csproj">
       <Project>{f1eeb3e0-042c-461e-a672-759d1170538f}</Project>

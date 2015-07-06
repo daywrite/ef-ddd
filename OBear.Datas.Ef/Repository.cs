@@ -14,7 +14,7 @@ namespace OBear.Datas.Ef
     /// </summary>
     /// <typeparam name="TEntity">实体类型</typeparam>
     /// <typeparam name="TKey">主键类型</typeparam>
-    public class Repository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : EntityBase<TKey>
+    public class Repository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class, IAggregateRoot<TKey> 
     {
         private readonly DbSet<TEntity> _dbSet;
         private readonly IUnitOfWork _unitOfWork;

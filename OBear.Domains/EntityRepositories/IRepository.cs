@@ -12,7 +12,7 @@ namespace OBear.Domains.EntityRepositories
     /// </summary>
     /// <typeparam name="TEntity">实体类型</typeparam>
     /// <typeparam name="TKey">主键类型</typeparam>
-    public interface IRepository<TEntity, in TKey> : IDependency where TEntity : EntityBase<TKey>
+    public interface IRepository<TEntity, in TKey> : IDependency where TEntity : class, IAggregateRoot<TKey> 
     {
         #region 属性
 

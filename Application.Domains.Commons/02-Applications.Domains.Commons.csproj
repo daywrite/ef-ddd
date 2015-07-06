@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Models\Area.Base.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\AreaQuery.cs" />
     <Compile Include="Repositories\IAreaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
