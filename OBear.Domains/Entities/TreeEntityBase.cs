@@ -41,7 +41,7 @@ namespace OBear.Domains
         /// <summary>
         /// 路径
         /// </summary>
-        [Required]
+        [StringLength(800, ErrorMessage = "路径输入过长，不能超过800位")]
         public virtual string Path { get; private set; }
 
         /// <summary>

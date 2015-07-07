@@ -23,9 +23,9 @@ namespace OBear.Datas.Ef
         protected EfUnitOfWork(string connectionName)
             : base(connectionName)
         {
-            
+
         }
-       
+
         /// <summary>
         /// 添加映射配置
         /// </summary>
@@ -87,6 +87,7 @@ namespace OBear.Datas.Ef
             }
             catch (DbEntityValidationException ex)
             {
+                var s = ex.EntityValidationErrors;
                 //throw new EfValidationException(ex);
             }
             finally

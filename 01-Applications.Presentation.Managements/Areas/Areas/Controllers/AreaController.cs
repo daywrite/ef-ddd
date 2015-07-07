@@ -29,7 +29,7 @@ namespace Presentation.Areas.Areas.Controllers
 
         public ActionResult Index()
         {
-            var addList = "[{\"ParentId\":\"\",\"Cod,nulle\":null,\"Text\":\"123\",\"Path\":\"\",\"Level\":0,\"SortId\":37,\"PinYin\":\"123\",\"FullPinYin\":\"123\",\"Enabled\":true,\"CreateTime\":\"2015-07-07T11:54:30.6476865+08:00\",\"Version\":null,\"Id\":\"e5f351a9-6bc1-4675-82b3-7038b3996ecd\"}]";
+            var addList = "[{\"ParentId\":\"e5f351a9-6bc1-4675-82b3-7038b3996ecd\",\"Cod,nulle\":null,\"Text\":\"123\",\"Path\":\"\",\"Level\":0,\"SortId\":37,\"PinYin\":\"123\",\"FullPinYin\":\"123\",\"Enabled\":true,\"CreateTime\":\"2015-07-07T11:54:30.6476865+08:00\",\"Version\":null,\"Id\":\"e5f351a9-6bc1-4675-82b3-7038b3996ecd\"}]";
             var listAdd = OBear.Json.ToObject<List<AreaDto>>(addList);
             var listUpdate = OBear.Json.ToObject<List<AreaDto>>("[]");
             var listDelete = OBear.Json.ToObject<List<AreaDto>>("[]");
