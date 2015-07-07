@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 using System.Data.Entity;
 using System.Reflection;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 
 namespace OBear.Datas.Ef
 {
     /// <summary>
     /// Entity Framework工作单元
     /// </summary>
-    public abstract class EfUnitOfWork : DbContext
+    public abstract class EfUnitOfWork : DbContext, IUnitOfWork
     {
         /// <summary>
         /// 初始化Entity Framework工作单元
@@ -51,5 +53,57 @@ namespace OBear.Datas.Ef
         {
             return new[] { GetType().Assembly };
         }
+
+        /// <summary>
+        /// 启动标识
+        /// </summary>
+        private bool IsStart { get; set; }
+
+        /// <summary>
+        /// 跟踪号
+        /// </summary>
+        public string TraceId { get; private set; }
+
+        /// <summary>
+        /// 启动
+        /// </summary>
+        public void Start()
+        {
+            IsStart = true;
+        }
+
+        /// <summary>
+        /// 提交更新
+        /// </summary>
+        public void Commit()
+        {
+            try
+            {
+                SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                //throw new ConcurrencyException(ex);
+            }
+            catch (DbEntityValidationException ex)
+            {
+                //throw new EfValidationException(ex);
+            }
+            finally
+            {
+                IsStart = false;
+            }
+        }
+
+        /// <summary>
+        /// 通过启动标识执行提交，如果已启动，则不提交
+        /// </summary>
+        internal void CommitByStart()
+        {
+            if (IsStart)
+                return;
+            Commit();
+        }
+
     }
 }

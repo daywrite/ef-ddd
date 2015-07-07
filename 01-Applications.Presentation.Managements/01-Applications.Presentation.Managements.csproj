@@ -140,6 +140,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Areas\AreasAreaRegistration.cs" />
     <Compile Include="Areas\Areas\Controllers\AreaController.cs" />
+    <Compile Include="Base\GridControllerBase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -275,6 +276,10 @@
     <ProjectReference Include="..\OBear.Domains\OBear.Domains.csproj">
       <Project>{7f932367-7dc5-4073-9a1d-2b57aa71e9cc}</Project>
       <Name>OBear.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util.Json\OBear.Json.csproj">
+      <Project>{855a1ed7-ee9a-4312-8e2c-e2f9d3a5287e}</Project>
+      <Name>OBear.Json</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

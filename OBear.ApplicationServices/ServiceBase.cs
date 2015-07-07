@@ -19,7 +19,7 @@ namespace OBear.ApplicationServices
     public abstract class ServiceBase<TEntity, TDto, TQuery, TKey> : IServiceBase<TDto, TQuery>
         where TEntity : class, IAggregateRoot<TKey>
         where TDto : IDto, new()
-        //where TQuery : IPager
+    //where TQuery : IPager
     {
 
         #region 构造方法
@@ -71,13 +71,13 @@ namespace OBear.ApplicationServices
         /// 转换为数据传输对象
         /// </summary>
         /// <param name="entity">实体</param>
-        //protected abstract TDto ToDto(TEntity entity);
+        protected abstract TDto ToDto(TEntity entity);
 
         /// <summary>
         /// 转换为实体
         /// </summary>
         /// <param name="dto">数据传输对象</param>
-        //protected abstract TEntity ToEntity(TDto dto);
+        protected abstract TEntity ToEntity(TDto dto);
 
         #endregion
 
@@ -276,15 +276,15 @@ namespace OBear.ApplicationServices
         /// <summary>
         /// 添加
         /// </summary>
-        //protected virtual void Add(TEntity entity)
-        //{
-        //    entity.CheckNull("entity");
-        //    AddBefore(entity);
-        //    entity.Init();
-        //    entity.Validate();
-        //    Repository.Add(entity);
-        //    AddAfter(entity);
-        //}
+        protected virtual void Add(TEntity entity)
+        {
+            //entity.CheckNull("entity");
+            //AddBefore(entity);
+            //entity.Init();
+            //entity.Validate();
+            //Repository.Add(entity);
+            //AddAfter(entity);
+        }
 
         /// <summary>
         /// 添加前操作
@@ -304,16 +304,16 @@ namespace OBear.ApplicationServices
         /// <summary>
         /// 修改
         /// </summary>
-        //protected virtual void Update(TEntity entity)
-        //{
-        //    entity.CheckNull("entity");
-        //    var oldEntity = Repository.Find(entity.Id);
-        //    oldEntity.CheckNull("oldEntity");
-        //    UpdateBefore(entity, oldEntity);
-        //    entity.Validate();
-        //    Update(entity, oldEntity);
-        //    UpdateAfter(entity);
-        //}
+        protected virtual void Update(TEntity entity)
+        {
+            //entity.CheckNull("entity");
+            //var oldEntity = Repository.Find(entity.Id);
+            //oldEntity.CheckNull("oldEntity");
+            //UpdateBefore(entity, oldEntity);
+            //entity.Validate();
+            //Update(entity, oldEntity);
+            //UpdateAfter(entity);
+        }
 
         /// <summary>
         /// 修改前操作
@@ -362,13 +362,13 @@ namespace OBear.ApplicationServices
         /// 删除
         /// </summary>
         /// <param name="ids">Id集合字符串，多个Id用逗号分隔</param>
-        //public virtual void Delete(string ids)
-        //{
-        //    var entities = GetEntitiesByIds(ids);
-        //    DeleteBefore(entities);
-        //    Repository.Remove(entities);
-        //    WriteLog("删除成功", entities);
-        //}
+        public virtual void Delete(string ids)
+        {
+            //var entities = GetEntitiesByIds(ids);
+            //DeleteBefore(entities);
+            //Repository.Remove(entities);
+            //WriteLog("删除成功", entities);
+        }
 
         /// <summary>
         /// 删除前操作

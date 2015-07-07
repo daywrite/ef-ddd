@@ -32,6 +32,27 @@ namespace Applications.Services.Impl.Commons
             _areaRepository = repository;
         }
 
+        #region 实体与Dto转换
+
+        /// <summary>
+        /// 转换为数据传输对象
+        /// </summary>
+        /// <param name="entity">实体</param>
+        protected override AreaDto ToDto(Area entity)
+        {
+            return entity.ToDto();
+        }
+
+        /// <summary>
+        /// 转换为实体
+        /// </summary>
+        /// <param name="dto">数据传输对象</param>
+        protected override Area ToEntity(AreaDto dto)
+        {
+            return dto.ToEntity();
+        }
+
+        #endregion
         /// <summary>
         /// 获取 
         /// </summary>
