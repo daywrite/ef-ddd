@@ -19,12 +19,23 @@ namespace OBear.Domains.EntityRepositories
         /// <summary>
         /// 获取 当前单元操作对象
         /// </summary>
-        IUnitOfWork UnitOfWork { get; }
+        IUnitOfWork GetUnitOfWork();
 
         /// <summary>
         /// 获取 当前实体类型的查询数据集
         /// </summary>
         IQueryable<TEntity> Entities { get; }
+
+        /// <summary>
+        /// 添加实体
+        /// </summary>
+        /// <param name="entity">实体</param>
+        void Add(TEntity entity);
+        /// <summary>
+        /// 添加实体
+        /// </summary>
+        /// <param name="entities">实体</param>
+        void Add(IEnumerable<TEntity> entities);
 
         #endregion
     }

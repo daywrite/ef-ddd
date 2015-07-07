@@ -14,7 +14,7 @@ namespace OBear.Domains
         /// <summary>
         /// 初始化
         /// </summary>
-        //void Init();
+        void Init();
         /// <summary>
         /// 验证
         /// </summary>

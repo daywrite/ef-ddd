@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="00-Extensions.Nullable.cs" />
+    <Compile Include="00-Extensions.Validate.cs" />
     <Compile Include="Conv.cs" />
     <Compile Include="Datas\IUnitOfWork.cs" />
     <Compile Include="00-Extensions.Convert.cs" />

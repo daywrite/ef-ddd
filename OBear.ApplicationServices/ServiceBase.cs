@@ -278,28 +278,28 @@ namespace OBear.ApplicationServices
         /// </summary>
         protected virtual void Add(TEntity entity)
         {
-            //entity.CheckNull("entity");
-            //AddBefore(entity);
-            //entity.Init();
+            entity.CheckNull("entity");
+            AddBefore(entity);
+            entity.Init();
             //entity.Validate();
-            //Repository.Add(entity);
-            //AddAfter(entity);
+            Repository.Add(entity);
+            AddAfter(entity);
         }
 
         /// <summary>
         /// 添加前操作
         /// </summary>
-        //protected virtual void AddBefore(TEntity entity)
-        //{
-        //}
+        protected virtual void AddBefore(TEntity entity)
+        {
+        }
 
         /// <summary>
         /// 添加后操作
         /// </summary>
-        //protected virtual void AddAfter(TEntity entity)
-        //{
+        protected virtual void AddAfter(TEntity entity)
+        {
         //    AddLog(entity);
-        //}
+        }
 
         /// <summary>
         /// 修改

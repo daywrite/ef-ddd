@@ -40,5 +40,26 @@ namespace OBear.Domains
         public DateTime CreatedTime { get; set; }
 
         #endregion
+
+        #region Init(初始化)
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public virtual void Init()
+        {
+            if (Id.Equals(default(TKey)))
+                Id = CreateId();
+        }
+
+        /// <summary>
+        /// 创建标识
+        /// </summary>
+        protected virtual TKey CreateId()
+        {
+            return Conv.To<TKey>(Guid.NewGuid());
+        }
+
+        #endregion
     }
 }
