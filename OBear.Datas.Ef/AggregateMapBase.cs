@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,7 +49,7 @@ namespace OBear.Datas.Ef
         /// </summary>
         private void MapRowVersion()
         {
-            //Property(t => t.Version).HasColumnName("Version").IsRowVersion().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed).IsOptional();
+            Property(t => t.Version).HasColumnName("Version").IsRowVersion().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed).IsOptional();
         }
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace OBear.Datas.Ef
         /// </summary>
         private void MapConcurrencyToken()
         {
-            //Property(t => t.Version).HasColumnName("Version").IsConcurrencyToken().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None).IsOptional();
+            Property(t => t.Version).HasColumnName("Version").IsConcurrencyToken().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None).IsOptional();
         }
     }
 }

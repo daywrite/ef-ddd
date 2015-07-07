@@ -18,7 +18,7 @@ namespace OBear.Domains
         /// <summary>
         /// 验证
         /// </summary>
-        //void Validate();
+        void Validate();
     }
 
     /// <summary>

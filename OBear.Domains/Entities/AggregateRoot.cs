@@ -24,7 +24,7 @@ namespace OBear.Domains
         /// <summary>
         /// 版本号(乐观锁)
         /// </summary>
-        //public byte[] Version { get; set; }
+        public byte[] Version { get; set; }
     }
 }
 

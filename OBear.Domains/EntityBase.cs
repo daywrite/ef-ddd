@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OBear.Validations;
 
 namespace OBear.Domains
 {
@@ -11,7 +12,7 @@ namespace OBear.Domains
     /// 可持久化到数据库的数据模型基类
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
-    public abstract class EntityBase<TKey> : IEntity<TKey>
+    public abstract class EntityBase<TKey> :DomainBase, IEntity<TKey>
     {
         protected EntityBase(TKey id)
         {
@@ -58,6 +59,18 @@ namespace OBear.Domains
         protected virtual TKey CreateId()
         {
             return Conv.To<TKey>(Guid.NewGuid());
+        }
+
+        #endregion
+        #region Validate(验证)
+
+        /// <summary>
+        /// 验证
+        /// </summary>
+        protected override void Validate(ValidationResultCollection results)
+        {
+            if (Equals(Id, default(TKey)))
+                results.Add(new ValidationResult("Id不能为空"));
         }
 
         #endregion

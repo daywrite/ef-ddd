@@ -28,7 +28,7 @@ namespace Applications.Services.Dtos.Commons
                 FullPinYin = dto.FullPinYin,
                 Enabled = dto.Enabled,
                 //CreateTime = dto.CreateTime,
-                //Version = dto.Version,
+                Version = dto.Version,
             };
         }
 
@@ -51,7 +51,7 @@ namespace Applications.Services.Dtos.Commons
                 FullPinYin = entity.FullPinYin,
                 Enabled = entity.Enabled,
                 //CreateTime = entity.CreateTime,
-                //Version = entity.Version,
+                Version = entity.Version,
             };
         }
     }
