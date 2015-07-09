@@ -32,6 +32,8 @@ namespace Applications.Services.Impl.Commons
             _areaRepository = repository;
         }
 
+        #endregion
+
         #region 实体与Dto转换
 
         /// <summary>
@@ -53,13 +55,6 @@ namespace Applications.Services.Impl.Commons
         }
 
         #endregion
-        /// <summary>
-        /// 获取 
-        /// </summary>
-        public IQueryable<Area> Areas
-        {
-            get { return _areaRepository.Entities; }
-        }
-        #endregion
+       
     }
 }

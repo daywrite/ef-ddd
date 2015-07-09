@@ -12,10 +12,6 @@ using OBear.ApplicationServices;
 namespace Applications.Services.Contracts.Commons
 {
     public interface IAreaService : IBatchService<AreaDto, AreaQuery>, IDependency
-    {
-        /// <summary>
-        /// 获取查询数据集
-        /// </summary>
-        IQueryable<Area> Areas { get; }
+    {        
     }
 }

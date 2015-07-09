@@ -18,7 +18,7 @@ namespace Presentation.Controllers
         }
         public ActionResult Index()
         {
-            List<Area> number = _areaService.Areas.ToList();
+            //List<Area> number = _areaService.Areas.ToList();
 
             return View();
         }

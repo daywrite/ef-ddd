@@ -29,26 +29,7 @@ namespace OBear.Datas.Ef
         /// Ef工作单元
         /// </summary>
         protected EfUnitOfWork UnitOfWork { get; private set; }
-
-        //private readonly DbSet<TEntity> _dbSet;
-        //private readonly IUnitOfWork _unitOfWork;
-
-        //public Repository(IUnitOfWork unitOfWork)
-        //{
-        //    _unitOfWork = unitOfWork;
-        //    _dbSet = ((DbContext)unitOfWork).Set<TEntity>();
-        //}
-
-        /// <summary>
-        /// 获取 当前单元操作对象
-        /// </summary>
-        //public IUnitOfWork UnitOfWork { get { return _unitOfWork; } }
-
-        /// <summary>
-        /// 获取 当前实体类型的查询数据集
-        /// </summary>
-        public IQueryable<TEntity> Entities { get { return UnitOfWork.Set<TEntity>(); } }
-
+             
         /// <summary>
         /// 添加实体
         /// </summary>
@@ -72,6 +53,31 @@ namespace OBear.Datas.Ef
         }
 
         /// <summary>
+        /// 查找实体集合
+        /// </summary>
+        public List<TEntity> FindAll()
+        {
+            return Find().ToList();
+        }
+
+        /// <summary>
+        /// 查找实体
+        /// </summary>
+        public IQueryable<TEntity> Find()
+        {
+            return UnitOfWork.Set<TEntity>();
+        }
+
+        /// <summary>
+        /// 查找实体
+        /// </summary>
+        /// <param name="id">实体标识</param>
+        public TEntity Find(params object[] id)
+        {
+            return UnitOfWork.Set<TEntity>().Find(id);
+        }
+
+        /// <summary>
         /// 保存
         /// </summary>
         public void Save()
@@ -85,7 +91,5 @@ namespace OBear.Datas.Ef
         public IUnitOfWork GetUnitOfWork() {
             return UnitOfWork;
         }
-
-
     }
 }
