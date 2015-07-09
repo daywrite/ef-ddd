@@ -15,7 +15,7 @@ namespace Applications.Services.Impl.Commons
     /// <summary>
     /// 地区服务
     /// </summary>
-    public class AreaService : BatchServiceBase<Area, AreaDto, AreaQuery>, IAreaService
+    public class AreaService : TreeBatchService<Area, AreaDto, AreaQuery>, IAreaService
     {
         private readonly IRepositoryBase<Area> _areaRepository;
 

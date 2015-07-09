@@ -63,6 +63,7 @@
     <Compile Include="Impl\Commons\AreaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBase.cs" />
+    <Compile Include="TreeBatchService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Domains.Commons\02-Applications.Domains.Commons.csproj">
