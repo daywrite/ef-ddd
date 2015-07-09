@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B0CE060-892F-4926-A69C-B0B2EAAE8948}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Applications.Service.Tests</RootNamespace>
+    <AssemblyName>Applications.Service.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.1.5\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Configs\IocConfig.cs" />
+    <Compile Include="Impl\Commons\AreaServiceTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\01-Applications.Presentation.Managements\01-Applications.Presentation.Managements.csproj">
+      <Project>{d05f7660-4d2f-46af-b15b-2d1a7379112e}</Project>
+      <Name>01-Applications.Presentation.Managements</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Domains.Commons\02-Applications.Domains.Commons.csproj">
+      <Project>{f419d743-e46c-4729-a446-5a6c6aa4a755}</Project>
+      <Name>02-Applications.Domains.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Infrastructure.Core\01-Applications.Infrastructure.Core.csproj">
+      <Project>{f06d7c04-bb3e-40bb-a50b-4d1874f19d6f}</Project>
+      <Name>01-Applications.Infrastructure.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Applications.Datas.Ef\02-Applications.Datas.Ef.csproj">
+      <Project>{5d64fa71-9f5b-4a19-8f09-589869a44be6}</Project>
+      <Name>02-Applications.Datas.Ef</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Applications.Domains.Core\01-Applications.Domains.Core.csproj">
+      <Project>{a619ba60-0a08-45fa-9e30-e0636c6e554a}</Project>
+      <Name>01-Applications.Domains.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Applications.Services\Applications.Services.csproj">
+      <Project>{718424dc-29d6-4863-b9b4-cf154cb288f9}</Project>
+      <Name>Applications.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OBear.ApplicationServices\OBear.ApplicationServices.csproj">
+      <Project>{b8fcd256-9a3a-44b0-bf75-5eafec4bc8e5}</Project>
+      <Name>OBear.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OBear.Core\OBear.Core.csproj">
+      <Project>{f1eeb3e0-042c-461e-a672-759d1170538f}</Project>
+      <Name>OBear.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OBear.Datas.Ef\03-OBear.Datas.Ef.csproj">
+      <Project>{8fbf0731-24f8-4ba4-9cc8-61a722999f7d}</Project>
+      <Name>03-OBear.Datas.Ef</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OBear.DI.Autofac\OBear.DI.Autofac.csproj">
+      <Project>{c76b4e9f-1f09-4ba8-bec8-2f51f18fb034}</Project>
+      <Name>OBear.DI.Autofac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OBear.Domains\OBear.Domains.csproj">
+      <Project>{7f932367-7dc5-4073-9a1d-2b57aa71e9cc}</Project>
+      <Name>OBear.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util.Json\OBear.Json.csproj">
+      <Project>{855a1ed7-ee9a-4312-8e2c-e2f9d3a5287e}</Project>
+      <Name>OBear.Json</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
