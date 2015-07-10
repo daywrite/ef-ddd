@@ -28,7 +28,7 @@ namespace Presentation.Base
         /// <summary>
         /// 服务
         /// </summary>
-        protected new IBatchService<TDto, TQuery> Service { get; private set; }
+        protected IBatchService<TDto, TQuery> Service { get; private set; }
 
         /// <summary>
         /// 保存

@@ -53,8 +53,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBear.Json", "Util.Json\OBe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-Tests", "05-Tests", "{BA4C3FE4-C496-4F36-83FA-CFF7F830C9B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Applications.Service.Tests", "Applications.Service.Tests\Applications.Service.Tests.csproj", "{4B0CE060-892F-4926-A69C-B0B2EAAE8948}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,10 +107,6 @@ Global
 		{855A1ED7-EE9A-4312-8E2C-E2F9D3A5287E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{855A1ED7-EE9A-4312-8E2C-E2F9D3A5287E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{855A1ED7-EE9A-4312-8E2C-E2F9D3A5287E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B0CE060-892F-4926-A69C-B0B2EAAE8948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B0CE060-892F-4926-A69C-B0B2EAAE8948}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B0CE060-892F-4926-A69C-B0B2EAAE8948}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B0CE060-892F-4926-A69C-B0B2EAAE8948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +135,5 @@ Global
 		{5D64FA71-9F5B-4A19-8F09-589869A44BE6} = {D0349BDD-3EFA-4734-9B63-574E42CE3797}
 		{7F932367-7DC5-4073-9A1D-2B57AA71E9CC} = {7346AC52-E973-468E-A6B7-BC4EB379B7A0}
 		{855A1ED7-EE9A-4312-8E2C-E2F9D3A5287E} = {F2ABE98E-C5BA-4114-A0D1-38A35503A9E5}
-		{4B0CE060-892F-4926-A69C-B0B2EAAE8948} = {BA4C3FE4-C496-4F36-83FA-CFF7F830C9B4}
 	EndGlobalSection
 EndGlobal
